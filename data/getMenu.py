@@ -28,12 +28,12 @@ import pprint
 # =================== Retrieval Source =========================
 dining_hall = { "Philbrook":"30", "Stillings":"10", "Holloway":"80"}
 
-now = datetime.datetime.now()
-current_day = str(now.day)
+now = datetime.datetime.now() + datetime.timedelta(days=2)
+current_day = str(now.day) 
 current_month = str(now.month)
 current_year = str(now.year)
 
-url = 'http://foodpro.unh.edu/shortmenu.asp?sName=University+Of+New+Hampshire+Hospitality+Services&locationNum='+dining_hall["Holloway"]+'&locationName=Holloway+Dining+Hall&naFlag=1&WeeksMenus=This+Week%27s+Menus&myaction=read&dtdate='+current_month+'%2F'+current_day+'%2F'+current_year
+url = 'http://foodpro.unh.edu/shortmenu.asp?sName=University+Of+New+Hampshire+Hospitality+Services&locationNum='+dining_hall["Stillings"]+'&locationName=Holloway+Dining+Hall&naFlag=1&WeeksMenus=This+Week%27s+Menus&myaction=read&dtdate='+current_month+'%2F'+current_day+'%2F'+current_year
 
 # =================== Retrieval Data =========================
 
@@ -72,26 +72,26 @@ dictionary = {"Date" : title_list, "Location" : menu_list,
               "Food" : recipes_list} 
 for d, l in dictionary.items():
     print(d, l)
-#print(dictionary)
-#pprint.pprint(dictionary, width=1)
-
-
-
-            
-
-            
-            
-            
-            
-#                for i in list:
-#                    text = i.get_text()
-#                    print(text)                             
-
-
-
-# =================== Dump JSON =========================
-with open('Holloway.json', 'w') as f:
-     json.dump(dictionary, f)
+##print(dictionary)
+##pprint.pprint(dictionary, width=1)
+#
+#
+#
+#            
+#
+#            
+#            
+#            
+#            
+##                for i in list:
+##                    text = i.get_text()
+##                    print(text)                             
+#
+#
+#
+## =================== Dump JSON =========================
+#with open('Holloway.json', 'w') as f:
+#     json.dump(dictionary, f)
     
 
     
